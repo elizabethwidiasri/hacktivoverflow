@@ -1,0 +1,41 @@
+Hacktiv Overflow
+Buatlah clone sederhana dari Stack Overflow menggunakan Client-server model dengan spesifikasi sebagai berikut:
+
+___________________________________________________________________________________________
+API Documentation yang meliputi : URLs, HTTP method, request, response (success dan error case)
+___________________________________________________________________________________________
+
+___________________________________________________________________________________________
+Server
+CRUD endpoints untuk Questions (minimal ada title, description, upvotes, dan downvotes)
+CRU endpoints untuk Answers (minimal ada description, upvotes, dan downvotes)
+CRON dan Background Job (Materi akan diberikan di hari Senin, Week 4)
+Endpoint register untuk User
+Endpoint login menggunakan email & password (menggunakan JWT) untuk User
+
+Kompetensi Backend:
+API Documentation
+Authentication + Authorization
+Database
+___________________________________________________________________________________________
+
+___________________________________________________________________________________________
+Client
+Generate dari Vue CLI dan WAJIB mengimplementasikan Vuex
+Authentication (Login dan Register)
+Display Questions dan Answers
+CRUD Questions dan CRU Answers
+Upvote dan Downvote (silakan lihat Stack Overflow untuk referensi)
+NO alert();!
+
+Kompetensi Client:
+Vue.js (Components/Single File Components)
+Vue CLI
+Vuex
+Vue Router
+SPA (Single Page Application)
+___________________________________________________________________________________________
+
+
+Extras (Wajib untuk anak ngulang):
+Watched Tags (silakan lihat Stack Overflow untuk referensi)
