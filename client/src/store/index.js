@@ -10,14 +10,23 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     isLogin: false,
-    questions: []
+    questions: [],
+    question: {
+      title: '',
+      description: '',
+      upVotes: [],
+      answers: []
+    }
   },
   mutations: {
     SET_IS_LOGIN (state, payload) {
       state.isLogin = payload
     },
-    SET_QUESTION (state, payload) {
+    SET_QUESTIONS (state, payload) {
       state.questions = payload
+    },
+    SET_QUESTION (state, payload) {
+      state.question = payload
     }
 
   },
@@ -70,10 +79,25 @@ export default new Vuex.Store({
       axios.get('/questions')
         .then(({ data }) => {
           console.log(data)
-          commit('SET_QUESTION', data)
+          commit('SET_QUESTIONS', data)
         })
         .catch(err => {
           Toast.open(err.response)
+        })
+    },
+    fetchOneQuestion ({ commit }, payload) {
+      const token = payload.token
+      axios.get(`/questions/${payload.id}`, {
+        headers: {
+          token
+        }
+      })
+        .then(({ data }) => {
+          console.log(data, '<<<<<<<<<<<')
+          commit('SET_QUESTION', data)
+        })
+        .catch(err => {
+          console.log(err.response)
         })
     }
   },

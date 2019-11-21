@@ -62,7 +62,7 @@
         </figure>
       </div>
       <div class="media-content">
-        <p @click="$router.push(`/questions/detail`)" style="cursor: pointer;" class="title is-4">{{question.title}}</p>
+        <p @click="$router.push(`/questions/${question._id}`)" style="cursor: pointer;" class="title is-4">{{question.title}}</p>
         <!-- {{questions}} -->
         <div class="content">
           {{question.description}}

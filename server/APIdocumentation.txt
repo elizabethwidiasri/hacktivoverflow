@@ -55,10 +55,10 @@ content example
 endpoint: {baseURL}/questions
 method: POST
 
-headers: none
+headers: token
 body: 
-  email: type string, required
-  password: type string, required
+  title: type string, required
+  description: type string, required
 
 success response:
   status 200
@@ -84,12 +84,10 @@ content example
 
 findAll 
 endpoint: {baseURL}/questions
-method: POST
+method: GET
 
 headers: none
-body: 
-  email: type string, required
-  password: type string, required
+body: none
 
 success response:
   status 200
@@ -121,13 +119,11 @@ content example
 ]
 
 findOne
-endpoint: {baseURL}/questions
-method: POST
+endpoint: {baseURL}/questions/:id
+method: GET
 
-headers: none
-body: 
-  email: type string, required
-  password: type string, required
+headers: token
+body: none
 
 success response:
   status 200
@@ -148,13 +144,13 @@ content example
 ]
 
 3. updated
-endpoint: {baseURL}//question
-method: POST
+endpoint: {baseURL}/questions
+method: PATCH
 
-headers: none
+headers: token
 body: 
-  email: type string, required
-  password: type string, required
+  title: type string, required
+  description: type string, required
 
 success response:
   status 200
@@ -174,12 +170,10 @@ content example
 
 4. delete
 endpoint: {baseURL}//question
-method: POST
+method: DELETE
 
-headers: none
-body: 
-  email: type string, required
-  password: type string, required
+headers: token
+body: none
 
 success response:
   status 200
@@ -200,13 +194,12 @@ content example
 --------ANSWER [CRU]--------
 
 1. create
-endpoint: {baseURL}/users/login
+endpoint: {baseURL}/answers
 method: POST
 
-headers: none
+headers: token
 body: 
-  email: type string, required
-  password: type string, required
+  description: type string, required
 
 success response:
   status 200
@@ -227,13 +220,11 @@ content example
 
 findAll
 
-endpoint: {baseURL}/users/login
-method: POST
+endpoint: {baseURL}/answers
+method: GET
 
 headers: none
-body: 
-  email: type string, required
-  password: type string, required
+body: none
 
 success response:
   status 200
@@ -272,13 +263,11 @@ success response:
 ]
 
 findOne
-endpoint: {baseURL}/users/login
-method: POST
+endpoint: {baseURL}/answers
+method: GET
 
-headers: none
-body: 
-  email: type string, required
-  password: type string, required
+headers: token
+body: none
 
 success response:
   status 200
@@ -297,15 +286,24 @@ success response:
 
 
 3. update
-endpoint: {baseURL}/users/login
-method: POST
+endpoint: {baseURL}/answers
+method: PATCH
 
-headers: none
+headers: token
 body: 
-  email: type string, required
-  password: type string, required
+  description: type string, required
 
 success response:
   status 200
   content example
 content example
+{
+        "upVotes": [],
+        "downVotes": [],
+        "_id": "5dd558a33183be1dc1e652ba",
+        "userId": "5dd4ee36f8713c575796ce6a",
+        "questionId": "5dd51d50acb37d1894e4ea2f",
+        "description": "updated is the answer",
+        "createdAt": "2019-11-20T15:15:47.220Z",
+        "updatedAt": "2019-11-20T15:15:47.220Z"
+    }
