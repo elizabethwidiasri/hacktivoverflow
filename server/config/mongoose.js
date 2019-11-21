@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const mongoURI = process.env.MOGO_URI || 'mongodb://localhost:27017/hacktiv-overflow'
+const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/hacktiv-overflow'
 
 const mongoConfig = {
   useCreateIndex : true,
